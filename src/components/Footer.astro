@@ -1,0 +1,52 @@
+---
+import type { PageValue } from "../Layouts/MainLayout.astro";
+import { navItems } from "../data/navItems";
+
+interface Props {
+    page: PageValue;
+}
+
+const { page } = Astro.props as Props;
+
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.png";
+---
+
+<footer class="container mx-auto">
+    <div class="justify-around border-t-2 border-gray-400 py-8 md:flex">
+        <div class="flex size-36 flex-col justify-center">
+            <Image src={Logo} alt={"Mitee Logo"} class="object-contain" />
+        </div>
+
+        <div>
+            <h3 class="text-lg font-medium">Quick Links</h3>
+            <ul>
+                {
+                    navItems.map((item) => (
+                        <li>
+                            <a
+                                href={item.href}
+                                class={page === item.id ? "underline underline-offset-2" : "text-gray-500"}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-medium">Contacts</h3>
+
+            <ul>
+                <li>hello@example.com</li>
+                <li>+9112345667</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-lg font-medium">Social Media</h3>
+        </div>
+    </div>
+</footer>

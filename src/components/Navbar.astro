@@ -1,0 +1,24 @@
+---
+import type { PageValue } from "../Layouts/MainLayout.astro";
+import { navItems } from "../data/navItems";
+
+interface Props {
+    page: PageValue;
+}
+
+const { page } = Astro.props as Props;
+---
+
+<nav class="flex w-full justify-center border-t-2 border-b-2 border-gray-400 py-4">
+    <ul class="flex gap-4">
+        {
+            navItems.map((item) => (
+                <li>
+                    <a href={item.href} class={page === item.id ? "underline underline-offset-2" : "text-gray-800"}>
+                        {item.name}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>

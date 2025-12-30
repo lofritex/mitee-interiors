@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.png";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+import "../styles/global.css";
+
+const pages = {
+    HOME: "home",
+    ABOUT_US: "about-us",
+    PROJECTS: "projects",
+    CONTACT_US: "contact-us",
+} as const;
+
+export type PageValue = (typeof pages)[keyof typeof pages];
+
+interface Props {
+    page: PageValue;
+}
+
+const { page } = Astro.props as Props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lofritex</title>
+    </head>
+    <body class="flex h-screen flex-col">
+        <header class="container mx-auto flex flex-col items-center">
+            <div class="flex size-36 flex-col justify-center">
+                <Image src={Logo} alt={"Mitee Logo"} class="object-contain" />
+            </div>
+            <Navbar page={page} />
+        </header>
+        <main class="grow">
+            <slot />
+        </main>
+        <Footer page={page} />
+    </body>
+</html>
