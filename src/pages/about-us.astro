@@ -1,9 +1,64 @@
 ---
 import MainLayout from "../Layouts/MainLayout.astro";
+
+const qualities = [
+    {
+        label: "Authenticity Over Aesthetics",
+        content:
+            "In A Fast-Paced Design World Chasing Trends, Mitee Interiors — Founded By Sanjali Naik — Continues To Quietly And Purposefully Craft Spaces That Are Less About Looks And More About The People Who Live In Them. With Eight Years Of Experience And Projects Across Pune, Mumbai, And Kerala, Sylph Applauds Their Commitment To Authentic, Deeply Personal Interiors Rooted In How A Space Should Truly Feel.",
+    },
+
+    {
+        label: "Personalisation,Not Replication",
+        content:
+            "Mitee's Strength Lies In Its Versatility. Whether it's a minimalist Mumbai apartment, a layered traditional Kerala home, or a sleek commercial space, every project begins from scratch — with client conversations, not mood boards. Sylph recognizes how this leads to designs tailored to real lives, not packaged styles.",
+    },
+    {
+        label: "Design-First, Execution-Focused",
+        content:
+            "Unlike Many Firms That Fade Into Execution, Mitee Firmly Holds Its Ground As A Design-Focused Consultancy. From conceptualization and spatial planning to detailing and material selection, Sanjali’s firm ensures each vision is faithfully translated into reality — supported by thoughtful collaboration with contractors, in-house teams, and associates alike.",
+    },
+];
 ---
 
 <MainLayout page="about-us">
-    <div class="flex h-full items-center justify-center">
-        <p>About Us</p>
-    </div>
+    <section class="border-b pb-10">
+        <h3 class="my-10 text-center text-2xl">Why Mitee Interiors?</h3>
+
+        <div>
+            {
+                qualities.map((quality) => (
+                    <div class="my-4 flex items-center border p-4 py-8">
+                        <h3 class="flex-[30%] px-8 text-center text-2xl">{quality.label}</h3>
+                        <p class="flex-[70%] font-light">{quality.content}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <section class="py-10">
+        <h3 class="mb-10 text-center text-3xl">Client Reviews</h3>
+
+        <div class="grid grid-cols-3 gap-4">
+            {
+                Array(3)
+                    .fill(1)
+                    .map(() => (
+                        <div class="border p-6">
+                            <p class="aspect-square text-center font-light">
+                                "Thanks a lot for all the hard work. The house is really looking good. Touch wood. I
+                                really appreciate all the efforts and time you had given to our home. It was really good
+                                to work with you. The professionalism you carry is good and keep it up. We started our
+                                discussions in Oct-Nov and you had everything very clear in your mind (approach,
+                                Designs, Selections). I wish you all the very best and I am sure you would reach new
+                                heights for sure."
+                            </p>
+
+                            <p class="my-2 text-center font-medium">- Abhishek & Kirti Hadap</p>
+                        </div>
+                    ))
+            }
+        </div>
+    </section>
 </MainLayout>

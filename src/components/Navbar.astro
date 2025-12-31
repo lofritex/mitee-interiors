@@ -9,12 +9,15 @@ interface Props {
 const { page } = Astro.props as Props;
 ---
 
-<nav class="flex w-full justify-center border-t-2 border-b border-gray-400 py-4">
-    <ul class="flex gap-4">
+<nav class="sticky top-0 z-50 flex w-full justify-center border-t-2 border-b border-gray-400 bg-white py-4">
+    <ul class="flex items-end gap-4">
         {
             navItems.map((item) => (
                 <li>
-                    <a href={item.href} class={page === item.id ? "underline underline-offset-2" : "text-gray-800"}>
+                    <a
+                        href={item.href}
+                        class={page === item.id ? "text-lg font-medium underline underline-offset-2" : "text-gray-800"}
+                    >
                         {item.name}
                     </a>
                 </li>
