@@ -1,9 +1,120 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../Layouts/MainLayout.astro";
+
+import Lander from "../assets/lander.png";
+
+import Special1 from "../assets/Special_1.png";
+import Special2 from "../assets/Special_2.png";
+import Special3 from "../assets/Special_3.png";
+
+import ClientImage from "../assets/client.png";
 ---
 
 <MainLayout page="home">
-    <div class="flex h-full items-center justify-center">
-        <p>Home</p>
-    </div>
+    <section class="container mx-auto border-b py-10">
+        <div class="relative">
+            <Image src={Lander} alt="Landing Image" />
+
+            <div
+                class="to-peach via-peach absolute right-0 bottom-0 left-0 flex h-24 items-center justify-center bg-linear-to-b from-transparent via-80%"
+            >
+                <p class="text-2xl text-white">Sometimes Less Is More. Let's Design Your Space.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto flex border-b py-10">
+        <div class="flex flex-1 items-center justify-center">
+            <h2 class="text-3xl">About Us</h2>
+        </div>
+        <div class="flex flex-1 flex-col items-center justify-center space-y-4">
+            <h3 class="text-center text-2xl">Mitee Is a Nationally Renowned Studio Crafting Distinctive Spaces.</h3>
+            <p class="text-center text-lg font-light">
+                Derived From the Sanskrit Word “Bhumitee,” Meaning Dimension, Mitee Is a Pune-Based Design Studio
+                Crafting Refined, Functional Spaces Across India.
+            </p>
+            <button class="text-xl">Learn More</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto border-b py-10">
+        <div class="w-full flex-col items-center justify-center">
+            <h3 class="text-center text-2xl font-light">We Simply Speak and Create Something Special!</h3>
+
+            <div class="my-10 grid grid-cols-3 place-items-center gap-4">
+                <Image src={Special1} alt="Special 1" />
+                <Image src={Special2} alt="Special 2" />
+                <Image src={Special3} alt="Special 3" />
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button class="cursor-pointer rounded-2xl border px-6 py-4">Explore Projects</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto border-b py-10">
+        <div class="flex space-x-4">
+            <div class="flex-1">
+                <Image src={ClientImage} alt="Client Image" />
+            </div>
+            <div class="flex flex-1 flex-col justify-around pl-10">
+                <div>
+                    <h4 class="text-2xl">50+ Happy Clients</h4>
+                    <p class="text-xl font-light">Trusted by Homeowners and Brands Across India.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl">100+ Spaces Designed</h4>
+                    <p class="text-xl font-light">From Cozy Homes to Bold Commercial Interiors.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl">5+ Years of Experience</h4>
+                    <p class="text-xl font-light">Blending Vision with Functionality Since Day One.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl">20+ Cities Reached</h4>
+                    <p class="text-xl font-light">Designs That Travel Far Beyond Pune.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl">100+ Spaces Designed</h4>
+                    <p class="text-xl font-light">From Cozy Homes to Bold Commercial Interiors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto border-b py-10">
+        <div class="flex flex-col items-center justify-center">
+            <h3 class="text-2xl">Ready to Transform Your Space?</h3>
+            <p class="my-4 max-w-lg text-center">
+                Let's Discuss How We Can Bring Your Vision to Life With Our Minimalist Approach to Interior Design.
+            </p>
+            <button class="rounded-2xl border px-6 py-2">Reach Us Out</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-10">
+        <h3 class="mb-10 text-center text-3xl">Client Reviews</h3>
+
+        <div class="grid grid-cols-3 gap-4">
+            {
+                Array(3)
+                    .fill(1)
+                    .map(() => (
+                        <div class="border p-6">
+                            <p class="text-center font-light">
+                                "Thanks a lot for all the hard work. The house is really looking good. Touch wood. I
+                                really appreciate all the efforts and time you had given to our home. It was really good
+                                to work with you. The professionalism you carry is good and keep it up. We started our
+                                discussions in Oct-Nov and you had everything very clear in your mind (approach,
+                                Designs, Selections). I wish you all the very best and I am sure you would reach new
+                                heights for sure."
+                            </p>
+
+                            <p class="my-2 text-center font-medium">- Abhishek & Kirti Hadap</p>
+                        </div>
+                    ))
+            }
+        </div>
+    </section>
 </MainLayout>

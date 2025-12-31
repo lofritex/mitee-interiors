@@ -30,13 +30,13 @@ const { page } = Astro.props as Props;
         <title>Lofritex</title>
     </head>
     <body class="flex h-screen flex-col">
-        <header class="container mx-auto flex flex-col items-center">
+        <header class="container mx-auto flex max-w-7xl flex-col items-center">
             <div class="flex size-36 flex-col justify-center">
                 <Image src={Logo} alt={"Mitee Logo"} class="object-contain" />
             </div>
             <Navbar page={page} />
         </header>
-        <main class="grow">
+        <main class="container mx-auto max-w-7xl grow">
             <slot />
         </main>
         <Footer page={page} />
