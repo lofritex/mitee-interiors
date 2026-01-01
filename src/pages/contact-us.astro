@@ -5,8 +5,8 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
 ---
 
 <MainLayout page="contact-us">
-    <div class="my-10 flex space-x-8">
-        <div class="flex-1">
+    <div class="my-10 flex flex-col-reverse space-x-8 lg:flex-row">
+        <div class="my-10 flex-1 lg:my-0">
             <div>
                 <p class="text-3xl font-light">Lets Go</p>
                 <p class="text-3xl">Start your home with us</p>
@@ -28,23 +28,23 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
             </form>
         </div>
         <div class="flex-1">
-            <div class="max-w-4/5">
-                <p class="text-3xl leading-normal font-light">
+            <div>
+                <p class="text-xl leading-normal font-light md:text-3xl">
                     We'd love to hear about your project. Reach out to us through any of the following channels, and
                     we'll get back to you within 24 hours.
                 </p>
             </div>
             <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <Phone class="size-10 stroke-1" /></span>
-                <p class="text-2xl font-light">+9112345667</p>
+                <span class="border p-2"> <Phone class="size-8 stroke-1 sm:size-10" /></span>
+                <p class="text-xl font-light md:text-2xl">+9112345667</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <Mail class="size-10 stroke-1" /></span>
-                <p class="text-2xl font-light">miteeinteriors@gmail.com</p>
+                <span class="border p-2"> <Mail class="size-8 stroke-1 sm:size-10" /></span>
+                <p class="text-xl font-light md:text-2xl">miteeinteriors@gmail.com</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <MapPin class="size-10 stroke-1" /></span>
-                <p class="text-2xl font-light">Pune, India</p>
+                <span class="border p-2"> <MapPin class="size-8 stroke-1 sm:size-10" /></span>
+                <p class="text-xl font-light md:text-2xl">Pune, India</p>
             </div>
         </div>
     </div>

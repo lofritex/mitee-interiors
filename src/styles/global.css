@@ -2,24 +2,42 @@
 
 /* 1. Define the font face */
 @font-face {
-  font-family: 'Jost';
-  src: url('/fonts/Jost-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Jost";
+    src: url("/fonts/Jost-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* 2. Set as default in v4 Theme */
 @theme {
-  /* This overrides the default 'font-sans' stack used by Tailwind */
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* This overrides the default 'font-sans' stack used by Tailwind */
+    --font-sans:
+        "Jost", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 
-  --color-peach: #9C8B7E;
+    --color-peach: #9c8b7e;
 }
 
 /* 3. Force the browser to apply it to the base text (Preflight) */
 @layer base {
-  html {
-    font-family: var(--font-sans);
-  }
+    html {
+        font-family: var(--font-sans);
+    }
+}
+
+.tab.active {
+    @apply font-medium opacity-100;
+}
+
+.tab-pill {
+    @apply cursor-pointer rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap;
+}
+
+.tab-pill.active {
+    @apply bg-black text-white;
+}
+
+.project {
+    @apply flex h-48 w-full items-center justify-center border bg-gray-100 text-2xl font-light;
 }

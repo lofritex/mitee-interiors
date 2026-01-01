@@ -1,9 +1,85 @@
 ---
 import MainLayout from "../Layouts/MainLayout.astro";
+
+import { Image } from "astro:assets";
+import HightLight1 from "../assets/h1.png";
+import HightLight2 from "../assets/h2.png";
+import HightLight3 from "../assets/h3.png";
 ---
 
 <MainLayout page="projects">
-    <div class="flex h-full items-center justify-center">
-        <p>Projects</p>
-    </div>
+    <section class="border-b pb-10">
+        <h3 class="my-10 text-center text-3xl">Hightlights</h3>
+
+        <div class="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4">
+            <Image src={HightLight1} alt="" class="row-span-2 h-full w-full object-cover" />
+            <Image src={HightLight2} alt="" class="h-full w-full object-cover" />
+            <Image src={HightLight3} alt="" class="h-full w-full object-cover" />
+        </div>
+    </section>
+
+    <section class="my-10">
+        <!-- Tabs -->
+        <div class="mb-6">
+            <!-- Desktop tabs -->
+            <div class="hidden justify-around md:flex">
+                <button
+                    class="active cursor-pointer text-xl font-light underline underline-offset-4 opacity-50"
+                    data-filter="all">All Projects</button
+                >
+                <button
+                    class="cursor-pointer text-xl font-light underline underline-offset-4 opacity-50"
+                    data-filter="commercial">Commercial</button
+                >
+                <button
+                    class="cursor-pointer text-xl font-light underline underline-offset-4 opacity-50"
+                    data-filter="residential">Residential</button
+                >
+                <button
+                    class="cursor-pointer text-xl font-light underline underline-offset-4 opacity-50"
+                    data-filter="custom">Custom</button
+                >
+            </div>
+
+            <!-- Mobile tabs -->
+            <div class="flex gap-3 overflow-x-auto sm:justify-center md:hidden">
+                <button class="tab-pill active" data-filter="all">All</button>
+                <button class="tab-pill" data-filter="commercial">Commercial</button>
+                <button class="tab-pill" data-filter="residential">Residential</button>
+                <button class="tab-pill" data-filter="custom">Custom</button>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div class="project" data-category="commercial">1</div>
+            <div class="project" data-category="residential">2</div>
+            <div class="project" data-category="custom">3</div>
+            <div class="project" data-category="commercial">4</div>
+            <div class="project" data-category="residential">5</div>
+            <div class="project" data-category="custom">6</div>
+        </div>
+    </section>
+
+    <script is:inline>
+        const tabs = document.querySelectorAll("[data-filter]");
+        const projects = document.querySelectorAll(".project");
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                const filter = tab.dataset.filter;
+
+                // Sync active state across desktop + mobile tabs
+                tabs.forEach((t) =>
+                    t.dataset.filter === filter ? t.classList.add("active") : t.classList.remove("active"),
+                );
+
+                // Filter content
+                projects.forEach((project) => {
+                    const category = project.dataset.category;
+                    project.style.display = filter === "all" || category === filter ? "flex" : "none";
+                });
+            });
+        });
+    </script>
 </MainLayout>
