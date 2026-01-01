@@ -20,6 +20,13 @@ interface Props {
 }
 
 const { page } = Astro.props as Props;
+
+const titles = {
+    [pages.HOME]: "Home",
+    [pages.ABOUT_US]: "About Us",
+    [pages.PROJECTS]: "Projects",
+    [pages.CONTACT_US]: "Contact Us",
+};
 ---
 
 <html lang="en">
@@ -27,7 +34,7 @@ const { page } = Astro.props as Props;
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Lofritex</title>
+        <title>{titles[page] ? `Mitee Interiors | ${titles[page]}` : "Mitee Interiors"}</title>
     </head>
     <body class="flex min-h-screen flex-col">
         <header class="container mx-auto flex max-w-7xl flex-col items-center">

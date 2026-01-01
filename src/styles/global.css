@@ -26,6 +26,10 @@
     }
 }
 
+.tab {
+    @apply cursor-pointer text-xl font-light underline underline-offset-4 opacity-50;
+}
+
 .tab.active {
     @apply font-medium opacity-100;
 }
