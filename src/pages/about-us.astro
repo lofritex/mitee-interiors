@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import MainLayout from "../Layouts/MainLayout.astro";
 
+import AboutImg from "../assets/aboutImg.png";
+
 import About1 from "../assets/about1.png";
 import About2 from "../assets/about2.png";
 
@@ -9,38 +11,52 @@ const qualities = [
     {
         label: "Authenticity Over Aesthetics",
         content:
-            "In A Fast-Paced Design World Chasing Trends, Mitee Interiors — Founded By Sanjali Naik — Continues To Quietly And Purposefully Craft Spaces That Are Less About Looks And More About The People Who Live In Them. With Eight Years Of Experience And Projects Across Pune, Mumbai, And Kerala, Sylph Applauds Their Commitment To Authentic, Deeply Personal Interiors Rooted In How A Space Should Truly Feel.",
+            "In a world driven by fast trends, Mitee Interiors chooses depth over display. Our work is rooted in authenticity—designing spaces around people, not appearances. Every interior is shaped by how it feels to live or work within it, allowing beauty to emerge naturally from purpose and thought.",
     },
 
     {
         label: "Personalisation,Not Replication",
         content:
-            "Mitee's Strength Lies In Its Versatility. Whether it's a minimalist Mumbai apartment, a layered traditional Kerala home, or a sleek commercial space, every project begins from scratch — with client conversations, not mood boards. Sylph recognizes how this leads to designs tailored to real lives, not packaged styles.",
+            "No two Mitee projects are ever alike. We don’t work from templates or fixed styles. Each space evolves through conversation, context, and careful observation—resulting in interiors that reflect real lives, not replicated aesthetics.",
     },
     {
         label: "Design-First, Execution-Focused",
         content:
-            "Unlike Many Firms That Fade Into Execution, Mitee Firmly Holds Its Ground As A Design-Focused Consultancy. From conceptualization and spatial planning to detailing and material selection, Sanjali’s firm ensures each vision is faithfully translated into reality — supported by thoughtful collaboration with contractors, in-house teams, and associates alike.",
+            "We operate as a design-led studio where concept and clarity lead every decision. From spatial planning and material selection to on-site execution, we ensure the original design intent is respected and translated with precision—through close collaboration with our teams and partners",
     },
 ];
 
 const aboutDetails = [
     {
         title: "Our Story",
-        content:
-            "Founded by Sanjali Naik, Mitee Interiors grew from a belief that design is not about impressing others—it's about creating spaces that support the people who inhabit them. Over the years, we've worked across Pune, Mumbai, and Kerala, shaping interiors rooted in authenticity, emotion, and everyday life. Our work continues quietly, purposefully—one meaningful space at a time.",
+        content: [
+            "Derived from the Sanskrit word “Bhumitee,” meaning dimension, Mitee Interiors is a design studio focused on creating refined, functional, and thoughtfully curated interiors.",
+            "With over 8 years of experience, we specialise in residential and commercial interior design, delivering spaces that balance aesthetics, practicality, and long-term value. From concept to execution, every project is approached with attention to detail and a deep understanding of our client's lifestyles and business needs. ",
+        ],
         img: About1,
     },
     {
         title: "What Do We Do?",
-        content:
-            "We design spaces that feel personal, intentional, and lived-in. Whether it's a home or a workspace, we begin with conversation—understanding how you move, live, and experience your environment. Every design is crafted from scratch, guided by clarity, warmth, and thoughtful detail.",
+        content: [
+            " We design interiors that feel personal, intentional, and enduring. Whether it's a home or a workspace, our process begins with understanding how you live, move, and interact with your environment.",
+            "Each design is developed from scratch—carefully layered with materiality, proportion, and detail—to create spaces that are not only beautiful, but meaningful and lasting.",
+        ],
         img: About2,
     },
 ];
 ---
 
 <MainLayout page="about-us">
+    <section class="border-b py-10">
+        <div>
+            <Image
+                src={AboutImg}
+                alt="Landing Image"
+                class="h-full min-h-[calc(100dvh-300px)] w-full bg-center object-cover"
+            />
+        </div>
+    </section>
+
     <section class="my-10 border-b pb-10">
         {
             aboutDetails.map((detail, index) => {
@@ -53,7 +69,15 @@ const aboutDetails = [
                         </div>
                         <div class="flex-1">
                             <h3 class="my-4 text-center text-2xl">{detail.title}</h3>
-                            <p class="mx-auto text-center text-lg font-light sm:text-balance">{detail.content}</p>
+                            <div class="flex flex-col gap-4">
+                                {Array.isArray(detail.content) ? (
+                                    detail.content.map((paragraph) => (
+                                        <p class="mx-auto text-center text-lg font-light sm:text-left">{paragraph}</p>
+                                    ))
+                                ) : (
+                                    <p class="mx-auto text-center text-lg font-light sm:text-left">{detail.content}</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 );
@@ -61,7 +85,7 @@ const aboutDetails = [
         }
     </section>
 
-    <section class="border-b pb-10">
+    <section class="border-b py-10">
         <h3 class="my-10 text-center text-2xl">Why Mitee Interiors?</h3>
 
         <div>

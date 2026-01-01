@@ -22,16 +22,31 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
                     placeholder="Your Email"
                     class="border-b p-2"
                 />
+                <input
+                    name="project_type"
+                    id=""
+                    placeholder="Project Type (Residential / Commercial)"
+                    class="border-b p-2"
+                />
+                <input
+                    type="text"
+                    autocomplete="address-level2"
+                    name="city"
+                    id=""
+                    placeholder="City"
+                    class="border-b p-2"
+                />
+
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" class="border p-2"
                 ></textarea>
-                <input type="submit" value="Send Message" class="max-w-fit border px-4 py-2" />
+                <input type="submit" value="Start the Conversation" class="max-w-fit border px-4 py-2" />
             </form>
         </div>
         <div class="flex-1">
             <div>
                 <p class="text-xl leading-normal font-light md:text-3xl">
-                    We'd love to hear about your project. Reach out to us through any of the following channels, and
-                    we'll get back to you within 24 hours.
+                    We'd love to understand your space, your requirements, and how you envision living or working within
+                    it
                 </p>
             </div>
             <div class="my-6 flex items-center space-x-4">
@@ -40,11 +55,11 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
             </div>
             <div class="my-6 flex items-center space-x-4">
                 <span class="border p-2"> <Mail class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">miteeinteriors@gmail.com</p>
+                <p class="text-xl font-light md:text-2xl">miteeinteriors@example.com</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
                 <span class="border p-2"> <MapPin class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">Pune, India</p>
+                <p class="text-xl font-light md:text-2xl">Pune, India & Calicut, India</p>
             </div>
         </div>
     </div>
