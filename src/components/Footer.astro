@@ -1,6 +1,7 @@
 ---
 import type { PageValue } from "../Layouts/MainLayout.astro";
 import { navItems } from "../data/navItems";
+import Contact from "../data/contact";
 
 interface Props {
     page: PageValue;
@@ -15,7 +16,7 @@ import Logo from "../assets/logo.png";
 <footer class="container mx-auto max-w-7xl">
     <div class="justify-around space-y-6 border-t border-gray-400 px-4 py-8 md:flex">
         <div class="flex w-full flex-col items-center justify-center md:w-fit">
-            <div>
+            <div class="w-36 sm:w-48">
                 <Image src={Logo} alt={"Mitee Logo"} class="object-contain" />
             </div>
         </div>
@@ -42,8 +43,8 @@ import Logo from "../assets/logo.png";
             <h3 class="text-lg font-medium">Contacts</h3>
 
             <ul>
-                <li>hello@example.com</li>
-                <li>+9112345667</li>
+                <li>{Contact.email}</li>
+                <li>{Contact.phone}</li>
             </ul>
         </div>
 

@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../Layouts/MainLayout.astro";
 
+import Contact from "../data/contact";
 import { Phone, Mail, MapPin } from "@lucide/astro";
 ---
 
@@ -51,11 +52,11 @@ import { Phone, Mail, MapPin } from "@lucide/astro";
             </div>
             <div class="my-6 flex items-center space-x-4">
                 <span class="border p-2"> <Phone class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">+9112345667</p>
+                <p class="text-xl font-light md:text-2xl">{Contact.phone}</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
                 <span class="border p-2"> <Mail class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">miteeinteriors@example.com</p>
+                <p class="text-xl font-light md:text-2xl">{Contact.email}</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
                 <span class="border p-2"> <MapPin class="size-8 stroke-1 sm:size-10" /></span>

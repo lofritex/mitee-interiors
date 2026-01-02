@@ -7,6 +7,9 @@ import AboutImg from "../assets/aboutImg.png";
 import About1 from "../assets/about1.png";
 import About2 from "../assets/about2.png";
 
+import Myself from "../assets/myself.jpg";
+import Team from "../assets/team.jpg";
+
 const qualities = [
     {
         label: "Authenticity Over Aesthetics",
@@ -17,7 +20,7 @@ const qualities = [
     {
         label: "Personalisation,Not Replication",
         content:
-            "No two Mitee projects are ever alike. We don’t work from templates or fixed styles. Each space evolves through conversation, context, and careful observation—resulting in interiors that reflect real lives, not replicated aesthetics.",
+            "No two Mitee projects are ever alike. We don't work from templates or fixed styles. Each space evolves through conversation, context, and careful observation—resulting in interiors that reflect real lives, not replicated aesthetics.",
     },
     {
         label: "Design-First, Execution-Focused",
@@ -27,6 +30,21 @@ const qualities = [
 ];
 
 const aboutDetails = [
+    {
+        title: "Myself",
+        content: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas alias tempora et laboriosam qui cum atque velit quis inventore. Asperiores!",
+        ],
+        img: Myself,
+    },
+    {
+        title: "Our Team",
+        content: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas alias tempora et laboriosam qui cum atque velit quis inventore. Asperiores!",
+        ],
+        img: Team,
+    },
+
     {
         title: "Our Story",
         content: [
@@ -47,16 +65,6 @@ const aboutDetails = [
 ---
 
 <MainLayout page="about-us">
-    <section class="border-b py-10">
-        <div>
-            <Image
-                src={AboutImg}
-                alt="Landing Image"
-                class="h-full min-h-[calc(100dvh-300px)] w-full bg-center object-cover"
-            />
-        </div>
-    </section>
-
     <section class="my-10 border-b pb-10">
         {
             aboutDetails.map((detail, index) => {
@@ -65,7 +73,7 @@ const aboutDetails = [
                 return (
                     <div class:list={["flex flex-col items-center sm:flex-row", { "sm:flex-row-reverse": isFlipped }]}>
                         <div class="flex-1 p-10">
-                            <Image src={detail.img} alt="" class="aspect-square" />
+                            <Image src={detail.img} alt="" class="aspect-square bg-bottom object-cover" />
                         </div>
                         <div class="flex-1">
                             <h3 class="my-4 text-center text-2xl">{detail.title}</h3>
