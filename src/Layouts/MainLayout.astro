@@ -11,6 +11,7 @@ const pages = {
     ABOUT_US: "about-us",
     PROJECTS: "projects",
     CONTACT_US: "contact-us",
+    "404": "404",
 } as const;
 
 export type PageValue = (typeof pages)[keyof typeof pages];
@@ -26,6 +27,7 @@ const titles = {
     [pages.ABOUT_US]: "About Us",
     [pages.PROJECTS]: "Projects",
     [pages.CONTACT_US]: "Contact Us",
+    [pages[404]]: "404 Not Found",
 };
 ---
 
