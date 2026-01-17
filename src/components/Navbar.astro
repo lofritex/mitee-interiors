@@ -1,4 +1,5 @@
 ---
+import { Menu, ShoppingCart, X } from "@lucide/astro";
 import type { PageValue } from "../Layouts/MainLayout.astro";
 import { navItems } from "../data/navItems";
 
@@ -9,23 +10,83 @@ interface Props {
 const { page } = Astro.props as Props;
 ---
 
-<nav class="sticky top-0 z-50 flex w-full justify-center border-t border-b bg-white py-4">
-    <ul class="flex items-end gap-4">
-        {
-            navItems
-                .filter((item) => item.showInHeader)
-                .map((item) => (
-                    <li>
-                        <a
-                            href={item.href}
-                            class={
-                                page === item.id ? "text-lg font-medium underline underline-offset-2" : "text-gray-800"
-                            }
-                        >
-                            {item.name}
-                        </a>
+<nav class="sticky top-0 z-50 flex w-full justify-center border-t border-b bg-white px-6 py-4">
+    <div class="flex w-full max-w-7xl flex-row-reverse items-center justify-between md:flex-row md:justify-center">
+        <ul class="hidden items-end gap-6 md:flex">
+            {
+                navItems
+                    .filter((item) => item.showInHeader)
+                    .map((item) => (
+                        <li>
+                            <a
+                                href={item.href}
+                                class={
+                                    page === item.id
+                                        ? "text-lg font-medium underline underline-offset-4"
+                                        : "text-gray-800 hover:text-black"
+                                }
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+            }
+            <li class="flex items-center space-x-2">
+                <a href="https://miteedecor.com" target="_blank" class="text-gray-800">Shop</a>
+                <ShoppingCart class="h-5 w-5" />
+            </li>
+        </ul>
+
+        <button id="menu-open" class="p-2 text-gray-800 md:hidden" aria-label="Open Menu">
+            <Menu />
+        </button>
+    </div>
+
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 z-60 translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+        <div class="absolute right-0 left-0 h-full w-full bg-white p-6 shadow-xl">
+            <div class="flex justify-end">
+                <button id="menu-close" class="p-2 text-gray-800" aria-label="Close Menu">
+                    <X />
+                </button>
+            </div>
+
+            <ul class="mt-8 flex flex-col gap-6">
+                {
+                    navItems
+                        .filter((item) => item.showInHeader)
+                        .map((item) => (
+                            <a href={item.href} class="text-2xl text-gray-800">
+                                <li class="block">{item.name}</li>
+                            </a>
+                        ))
+                }
+                <a href="https://miteedecor.com" target="_blank">
+                    <li class="flex items-center space-x-2 border-t pt-6">
+                        <span class="text-2xl text-gray-800">Shop</span>
+                        <ShoppingCart class="h-6 w-6" />
                     </li>
-                ))
-        }
-    </ul>
+                </a>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+<script>
+    const openBtn = document.getElementById("menu-open");
+    const closeBtn = document.getElementById("menu-close");
+    const backdrop = document.getElementById("menu-close-backdrop");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    function toggleMenu() {
+        mobileMenu?.classList.toggle("translate-x-full");
+        // Prevent scrolling when menu is open
+        document.body.classList.toggle("overflow-hidden");
+    }
+
+    openBtn?.addEventListener("click", toggleMenu);
+    closeBtn?.addEventListener("click", toggleMenu);
+    backdrop?.addEventListener("click", toggleMenu);
+</script>
