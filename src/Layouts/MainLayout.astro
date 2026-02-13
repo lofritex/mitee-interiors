@@ -42,6 +42,23 @@ const titles = {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{titles[page] ? `Mitee Interiors | ${titles[page]}` : "Mitee Interiors"}</title>
+
+        <meta name="description" content="Custom interior design services tailored to your lifestyle." />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.miteeinteriors.com/" />
+        <meta property="og:title" content={titles[page] ? `Mitee Interiors | ${titles[page]}` : "Mitee Interiors"} />
+        <meta property="og:description" content="Custom interior design services tailored to your lifestyle." />
+        <meta property="og:image" content="https://www.miteeinteriors.com/logo.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.miteeinteriors.com/" />
+        <meta
+            property="twitter:title"
+            content={titles[page] ? `Mitee Interiors | ${titles[page]}` : "Mitee Interiors"}
+        />
+        <meta property="twitter:description" content="Custom interior design services tailored to your lifestyle." />
+        <meta property="twitter:image" content="https://www.miteeinteriors.com/logo.png" />
     </head>
     <body class="relative flex min-h-screen flex-col">
         <header class="container mx-auto hidden max-w-7xl flex-col items-center md:flex">
