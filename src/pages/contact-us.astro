@@ -12,34 +12,71 @@ import { Mail, MapPin, Phone } from "@lucide/astro";
                 <p class="text-3xl font-light">Lets Go</p>
                 <p class="text-3xl">Start your home with us</p>
             </div>
-
-            <form action="#" method="post" class="grid grid-cols-1 gap-4 pt-8">
-                <input type="text" autocomplete="name" name="name" id="" placeholder="Your Name" class="border-b p-2" />
+            <form
+                action="https://docs.google.com/forms/d/e/1FAIpQLSeIeoWzSnvgIGqyjjIqjxODjcufbLR593miOavIzirIPsZYCw/formResponse"
+                method="post"
+                class="grid grid-cols-1 gap-4 pt-8"
+                id="the_form"
+            >
+                <input
+                    type="text"
+                    autocomplete="name"
+                    name="entry.1125051525"
+                    id=""
+                    placeholder="Your Name"
+                    class="border-b p-2"
+                    required
+                />
                 <input
                     type="text"
                     autocomplete="email"
-                    name="email"
+                    name="entry.2037057180"
                     id=""
                     placeholder="Your Email"
                     class="border-b p-2"
+                    required
                 />
-                <input
-                    name="project_type"
-                    id=""
-                    placeholder="Project Type (Residential / Commercial)"
-                    class="border-b p-2"
-                />
+
+                <div class="flex flex-col">
+                    <select name="entry.217436386" id="project_type" class="border-b bg-white p-2" required>
+                        <option value="" disabled selected>Select Project Type</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Both">Both</option>
+                    </select>
+                    <span id="project_type_error" class="mt-1 hidden text-xs text-red-500"
+                        >Please select a valid project type.</span
+                    >
+                </div>
+
                 <input
                     type="text"
                     autocomplete="address-level2"
-                    name="city"
+                    name="entry.78311827"
                     id=""
                     placeholder="City"
                     class="border-b p-2"
+                    required
                 />
 
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" class="border p-2"
-                ></textarea>
+                <input
+                    type="text"
+                    autocomplete="transaction-amount"
+                    name="entry.1935969012"
+                    id=""
+                    placeholder="Tenative Budget"
+                    class="border-b p-2"
+                    required
+                />
+
+                <textarea
+                    name="entry.1064524180"
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Scope of Work"
+                    class="border p-2"
+                    required></textarea>
                 <input type="submit" value="Start the Conversation" class="max-w-fit border px-4 py-2" />
             </form>
         </div>
@@ -66,4 +103,32 @@ import { Mail, MapPin, Phone } from "@lucide/astro";
             </div>
         </div>
     </div>
+    <script>
+        const myForm = document.getElementById("the_form") as HTMLFormElement | null;
+
+        if (myForm) {
+            myForm.addEventListener("submit", async (e: SubmitEvent): Promise<void> => {
+                e.preventDefault(); // This stops the redirect to Google
+
+                // 2. Prepare the data
+                const formData = new FormData(myForm);
+
+                try {
+                    // 3. Send the data to Google Forms
+                    await fetch(myForm.action, {
+                        method: "POST",
+                        mode: "no-cors", // Crucial: prevents CORS errors
+                        body: formData,
+                    });
+
+                    // 4. Success! Do something on your site instead of redirecting
+                    alert("Success! We'll get back to you soon.");
+                    myForm.reset(); // Optional: Clear the form
+                } catch (error) {
+                    console.error("Submission error:", error);
+                    alert("Something went wrong. Please try again.");
+                }
+            });
+        }
+    </script>
 </MainLayout>
