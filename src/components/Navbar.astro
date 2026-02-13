@@ -2,6 +2,7 @@
 import { Menu, ShoppingCart, X } from "@lucide/astro";
 import type { PageValue } from "../Layouts/MainLayout.astro";
 import { navItems } from "../data/navItems";
+import Logo from "../assets/mitee_logo_2.svg";
 
 interface Props {
     page: PageValue;
@@ -40,6 +41,10 @@ const { page } = Astro.props as Props;
         <button id="menu-open" class="p-2 text-gray-800 md:hidden" aria-label="Open Menu">
             <Menu />
         </button>
+
+        <div class="w-24 md:hidden">
+            <img src={Logo.src} alt={"Mitee Logo"} class="object-contain" />
+        </div>
     </div>
 
     <div
