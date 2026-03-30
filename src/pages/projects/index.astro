@@ -1,15 +1,39 @@
 ---
-import MainLayout from "../Layouts/MainLayout.astro";
+import MainLayout from "../../Layouts/MainLayout.astro";
 
 import { Image } from "astro:assets";
-import HightLight1 from "../assets/h1.png";
-import HightLight2 from "../assets/h2.png";
-import HightLight3 from "../assets/h3.png";
+import HightLight1 from "../../assets/h1.png";
+import HightLight2 from "../../assets/h2.png";
+import HightLight3 from "../../assets/h3.png";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("projects");
 ---
 
 <MainLayout page="projects">
     <section class="border-b pb-10">
         <h3 class="my-10 text-center text-3xl">Hightlights</h3>
+
+        <div class="grid grid-cols-3 gap-2 sm:gap-4">
+            <div class="group relative h-[70vh] w-full overflow-hidden border border-black">
+                <!-- image -->
+                <Image src={HightLight1} alt="All Projects" class="h-full w-full object-cover" />
+
+                <!-- overlay (height grows) -->
+                <div
+                    class="absolute bottom-0 left-0 h-0 w-full bg-white transition-all duration-500 ease-out group-hover:h-full"
+                >
+                </div>
+
+                <!-- text -->
+                <span
+                    class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-3xl text-black transition-transform duration-500 ease-out group-hover:-translate-y-[200%] md:text-5xl"
+                >
+                    All Projects
+                </span>
+            </div>
+        </div>
 
         <div class="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4">
             <Image src={HightLight1} alt="" class="row-span-2 h-full w-full object-cover" />
@@ -39,13 +63,20 @@ import HightLight3 from "../assets/h3.png";
         </div>
 
         <!-- Content -->
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            <div class="project" data-category="commercial">1</div>
-            <div class="project" data-category="residential">2</div>
-            <div class="project" data-category="custom">3</div>
-            <div class="project" data-category="commercial">4</div>
-            <div class="project" data-category="residential">5</div>
-            <!-- <div class="project" data-category="custom">6</div> -->
+
+        <div class="grid min-h-40 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {
+                posts.map((post) => (
+                    <a
+                        href={`/projects/${post.slug}`}
+                        class="project flex flex-col rounded border p-4"
+                        data-category={post.data.category}
+                    >
+                        <h2 class="text-lg font-semibold">{post.data.title}</h2>
+                        <p class="text-sm text-gray-600">{post.data.description}</p>
+                    </a>
+                ))
+            }
         </div>
     </section>
 
@@ -59,13 +90,16 @@ import HightLight3 from "../assets/h3.png";
 
                 // Sync active state across desktop + mobile tabs
                 tabs.forEach((t) =>
-                    t.dataset.filter === filter ? t.classList.add("active") : t.classList.remove("active"),
+                    t.dataset.filter === filter
+                        ? t.classList.add("active")
+                        : t.classList.remove("active"),
                 );
 
                 // Filter content
                 projects.forEach((project) => {
                     const category = project.dataset.category;
-                    project.style.display = filter === "all" || category === filter ? "flex" : "none";
+                    project.style.display =
+                        filter === "all" || category === filter ? "flex" : "none";
                 });
             });
         });
