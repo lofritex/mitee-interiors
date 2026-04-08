@@ -9,11 +9,28 @@ import HightLight3 from "../../assets/h3.png";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("projects");
+
+// Auto-scrolling cards component
+const cards = [
+    {
+        id: 1,
+        title: "Mountain View",
+        description: "Breathtaking peaks and valleys",
+        color: "from-blue-500 to-cyan-400",
+    },
+    { id: 2, title: "Ocean Waves", description: "Serene coastal beauty", color: "from-teal-500 to-emerald-400" },
+    { id: 3, title: "Forest Path", description: "Wandering through nature", color: "from-green-500 to-lime-400" },
+    { id: 4, title: "Desert Sunset", description: "Golden hour magic", color: "from-orange-500 to-amber-400" },
+    { id: 5, title: "City Lights", description: "Urban nightscape", color: "from-purple-500 to-pink-400" },
+    { id: 6, title: "Aurora Sky", description: "Dancing northern lights", color: "from-indigo-500 to-violet-400" },
+    { id: 7, title: "Canyon Edge", description: "Dramatic landscapes", color: "from-red-500 to-rose-400" },
+    { id: 8, title: "Tropical Paradise", description: "Island getaway vibes", color: "from-yellow-500 to-orange-400" },
+];
 ---
 
 <MainLayout page="projects">
     <section class="border-b pb-10">
-        <h3 class="my-10 text-center text-3xl">Hightlights</h3>
+        <h3 class="my-10 text-center text-3xl">Highlights</h3>
 
         <div class="grid grid-cols-3 gap-2 sm:gap-4">
             <div class="group relative h-[70vh] w-full overflow-hidden border border-black">
@@ -33,12 +50,56 @@ const posts = await getCollection("projects");
                     All Projects
                 </span>
             </div>
-        </div>
 
-        <div class="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4">
-            <Image src={HightLight1} alt="" class="row-span-2 h-full w-full object-cover" />
-            <Image src={HightLight2} alt="" class="h-full w-full object-cover" />
-            <Image src={HightLight3} alt="" class="h-full w-full object-cover" />
+            <div class="group/overlay relative h-[70vh] w-full overflow-hidden rounded-xl border border-black">
+                <!-- Scrolling cards container (initially below, scrolls up on hover) -->
+                <div class="absolute inset-0 bg-gray-100 p-4 pt-20">
+                    <div
+                        class="flex translate-y-full animate-[scrollVertical_30s_linear_infinite] flex-col gap-4 transition-transform duration-700 ease-out group-hover/overlay:translate-y-0 group-hover/overlay:[animation-play-state:paused]"
+                    >
+                        {
+                            cards.concat(cards).map((card) => (
+                                <div class="group/card relative h-80 w-full flex-shrink-0 cursor-pointer">
+                                    <div
+                                        class={`absolute inset-0 bg-gradient-to-br ${card.color} rounded-lg shadow-lg transition-all duration-300 group-hover/card:scale-105 group-hover/card:shadow-2xl`}
+                                    >
+                                        <div class="flex h-full flex-col justify-between p-6">
+                                            <div>
+                                                <h3 class="mb-2 text-2xl font-bold text-white">{card.title}</h3>
+                                                <p class="text-sm text-white/90">{card.description}</p>
+                                            </div>
+
+                                            {/* View More button - appears on hover */}
+                                            <button class="absolute right-6 bottom-6 left-6 translate-y-4 rounded-lg bg-white px-6 py-3 font-semibold text-gray-800 opacity-0 shadow-lg transition-all duration-300 group-hover/card:translate-y-0 group-hover/card:opacity-100 hover:bg-gray-50">
+                                                View More →
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <!-- Image overlay (slides up out of frame on hover) -->
+                <div
+                    class="absolute inset-0 transition-transform duration-700 ease-out group-hover/overlay:-translate-y-full"
+                >
+                    <Image src={HightLight1} alt="All Projects" class="h-full w-full object-cover" />
+                </div>
+
+                <!-- "ALL PROJECTS" heading with white bg (moves from bottom to top) -->
+                <div
+                    class="absolute right-0 bottom-0 left-0 z-10 bg-white px-6 py-4 transition-all duration-700 ease-out group-hover/overlay:top-0 group-hover/overlay:bottom-auto group-hover/overlay:bg-gray-100"
+                >
+                    <h2 class="text-center text-3xl font-bold text-black md:text-5xl">ALL PROJECTS</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 grid-rows-2 gap-2 sm:gap-4">
+                <Image src={HightLight2} alt="" class="h-full w-full object-cover" />
+                <Image src={HightLight3} alt="" class="h-full w-full object-cover" />
+            </div>
         </div>
     </section>
 
@@ -63,7 +124,6 @@ const posts = await getCollection("projects");
         </div>
 
         <!-- Content -->
-
         <div class="grid min-h-40 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {
                 posts.map((post) => (
@@ -90,18 +150,26 @@ const posts = await getCollection("projects");
 
                 // Sync active state across desktop + mobile tabs
                 tabs.forEach((t) =>
-                    t.dataset.filter === filter
-                        ? t.classList.add("active")
-                        : t.classList.remove("active"),
+                    t.dataset.filter === filter ? t.classList.add("active") : t.classList.remove("active"),
                 );
 
                 // Filter content
                 projects.forEach((project) => {
                     const category = project.dataset.category;
-                    project.style.display =
-                        filter === "all" || category === filter ? "flex" : "none";
+                    project.style.display = filter === "all" || category === filter ? "flex" : "none";
                 });
             });
         });
     </script>
 </MainLayout>
+
+<style>
+    @keyframes scrollVertical {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+</style>
