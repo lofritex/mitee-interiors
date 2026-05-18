@@ -60,10 +60,10 @@ import "swiper/css/pagination";
         <div class="aspect-4/3">
             <Image src={project.data.cover} alt={project.data.title} class="h-full w-full object-cover" />
         </div>
-        <div class="flex flex-col justify-between">
+        <div class="flex flex-col justify-between gap-4">
             <div>
                 <h2 class="my-4 text-3xl font-bold">Project Overview</h2>
-                <p class="text-lg">{project.data.overview}</p>
+                {project.data.overview?.map((para) => <p class="text-lg">{para}</p>)}
             </div>
 
             <div class="my-4 grid grid-cols-1 gap-4 text-lg sm:grid-cols-2">

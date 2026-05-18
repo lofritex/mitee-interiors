@@ -131,10 +131,10 @@ const cards = [
         <div class="grid min-h-40 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {
                 posts.map((post) => (
-                    <div>
+                    <div class="project" data-category={post.data.category}>
                         <div class="group relative overflow-hidden">
                             <div class="absolute inset-0 z-10 flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                <a href={`/projects/${post.slug}`} data-category={post.data.category}>
+                                <a href={`/projects/${post.slug}`}>
                                     <button class="cursor-pointer border px-6 py-2 text-white transition-colors hover:bg-white hover:text-black">
                                         View
                                     </button>
@@ -180,7 +180,7 @@ const cards = [
                 // Filter content
                 projects.forEach((project) => {
                     const category = project.dataset.category;
-                    project.style.display = filter === "all" || category === filter ? "flex" : "none";
+                    project.style.display = filter === "all" || category === filter ? "block" : "none";
                 });
             });
         });

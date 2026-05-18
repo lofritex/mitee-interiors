@@ -1,6 +1,9 @@
 ---
 title: "Amana Toyota Showroom"
-overview: "A customer-centric automobile showroom designed to balance brand presence with a comfortable, interactive environment. The space moves beyond a conventional display format to create a more engaging and experience-driven setting."
+overview:
+    [
+        "A customer-centric automobile showroom designed to balance brand presence with a comfortable, interactive environment. The space moves beyond a conventional display format to create a more engaging and experience-driven setting.",
+    ]
 cover: "@assets/projects/amana-toyota/cover.png"
 location: "Koduvally, Calicut"
 category: "commercial"
