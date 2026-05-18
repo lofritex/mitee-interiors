@@ -10,8 +10,10 @@
     },
     "dependencies": {
         "@lucide/astro": "^0.562.0",
+        "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.1.18",
         "astro": "^5.16.6",
+        "swiper": "^12.1.4",
         "tailwindcss": "^4.1.18"
     },
     "devDependencies": {

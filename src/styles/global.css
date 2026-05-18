@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 /* 1. Define the font face */
 @font-face {
     font-family: "Jost";
@@ -40,8 +42,4 @@
 
 .tab-pill.active {
     @apply bg-black text-white;
-}
-
-.project {
-    @apply flex h-48 w-full items-center justify-center border bg-gray-100 text-2xl font-light;
 }
