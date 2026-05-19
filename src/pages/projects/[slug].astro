@@ -97,12 +97,7 @@ import "swiper/css/grid";
             {
                 project.data.images?.map((img) => (
                     <div class="swiper-slide aspect-square w-[320px]">
-                        <a
-                            href={img.src}
-                            class="glightbox-trigger block h-full w-full"
-                            data-gallery={project.data.title}
-                            data-title={project.data.title}
-                        >
+                        <a href={img.src} class="glightbox-trigger block h-full w-full">
                             <Image
                                 src={img}
                                 alt={project.data.title}
