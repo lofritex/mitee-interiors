@@ -4,7 +4,7 @@ overview:
     [
         "A warm contemporary residence designed around simplicity, natural light, and timeless detailing. The project focuses on creating a calm and inviting atmosphere through clean lines, rich wood textures, soft neutral tones, and carefully balanced material combinations. Every space was curated to feel visually seamless while maintaining comfort and functionality for everyday living.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/mid-mode-house/cover.jpg"
 location: "Baner, Pune"
 category: "residential"
 completionDate: "2024-02-01"
@@ -12,16 +12,24 @@ area: "1275"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/mid-mode-house/01.jpg",
+        "@assets/projects/mid-mode-house/02.jpg",
+        "@assets/projects/mid-mode-house/03.jpg",
+        "@assets/projects/mid-mode-house/04.jpg",
+        "@assets/projects/mid-mode-house/05.jpg",
+        "@assets/projects/mid-mode-house/06.jpg",
+        "@assets/projects/mid-mode-house/07.jpg",
+        "@assets/projects/mid-mode-house/08.jpg",
+        "@assets/projects/mid-mode-house/09.jpg",
+        "@assets/projects/mid-mode-house/10.jpg",
+        "@assets/projects/mid-mode-house/11.jpg",
+        "@assets/projects/mid-mode-house/12.jpg",
+        "@assets/projects/mid-mode-house/13.jpg",
+        "@assets/projects/mid-mode-house/14.jpg",
+        "@assets/projects/mid-mode-house/15.jpg",
+        "@assets/projects/mid-mode-house/16.jpg",
+        "@assets/projects/mid-mode-house/17.jpg",
+        "@assets/projects/mid-mode-house/18.jpg",
     ]
 ---
 

@@ -4,7 +4,7 @@ overview:
     [
         "A contemporary residence designed around simplicity, spatial clarity, and timeless materiality. The project focuses on creating calm, highly functional living spaces through a restrained palette, clean detailing, and balanced natural light.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/greige-house/cover.jpg"
 location: "Prabhat Road, Pune"
 category: "residential"
 completionDate: "2024-03-01"
@@ -12,16 +12,33 @@ area: "1150"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/greige-house/01.jpg",
+        "@assets/projects/greige-house/02.jpg",
+        "@assets/projects/greige-house/03.jpg",
+        "@assets/projects/greige-house/04.jpg",
+        "@assets/projects/greige-house/05.jpg",
+        "@assets/projects/greige-house/06.jpg",
+        "@assets/projects/greige-house/07.jpg",
+        "@assets/projects/greige-house/08.jpg",
+        "@assets/projects/greige-house/09.jpg",
+        "@assets/projects/greige-house/10.jpg",
+        "@assets/projects/greige-house/11.jpg",
+        "@assets/projects/greige-house/12.jpg",
+        "@assets/projects/greige-house/13.jpg",
+        "@assets/projects/greige-house/14.jpg",
+        "@assets/projects/greige-house/15.jpg",
+        "@assets/projects/greige-house/16.jpg",
+        "@assets/projects/greige-house/17.jpg",
+        "@assets/projects/greige-house/18.jpg",
+        "@assets/projects/greige-house/19.jpg",
+        "@assets/projects/greige-house/20.jpg",
+        "@assets/projects/greige-house/21.jpg",
+        "@assets/projects/greige-house/22.jpg",
+        "@assets/projects/greige-house/23.jpg",
+        "@assets/projects/greige-house/24.jpg",
+        "@assets/projects/greige-house/25.jpg",
+        "@assets/projects/greige-house/26.jpg",
+        "@assets/projects/greige-house/27.jpg",
     ]
 ---
 

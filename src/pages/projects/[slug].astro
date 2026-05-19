@@ -31,16 +31,16 @@ import "swiper/css/pagination";
 ---
 
 <MainLayout page="projects">
-    <div class="relative my-20 flex items-center justify-center">
-        <div class="absolute left-0">
+    <div class="relative my-10 flex flex-col justify-center md:my-20 md:flex-row md:items-center">
+        <div class="left-0 md:absolute">
             <a href="/projects">
-                <button class="flex items-center text-xl">
+                <button class="flex cursor-pointer items-center text-xl">
                     <ChevronLeft /> All Projects
                 </button>
             </a>
         </div>
 
-        <h1 class="text-center text-4xl font-semibold">
+        <h1 class="my-8 text-center text-4xl font-semibold">
             {project.data.title}
         </h1>
     </div>
@@ -95,7 +95,7 @@ import "swiper/css/pagination";
         <div class="swiper-wrapper py-10">
             {
                 project.data.images?.map((img) => (
-                    <div class="swiper-slide">
+                    <div class="swiper-slide aspect-square w-[320px]">
                         <Image src={img} alt={project.data.title} class="h-full w-full object-cover object-center" />
                     </div>
                 ))

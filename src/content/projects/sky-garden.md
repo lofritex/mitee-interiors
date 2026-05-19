@@ -4,7 +4,7 @@ overview:
     [
         "A contemporary luxury residence designed around openness, natural light, and a seamless indoor-outdoor living experience. The project blends modern minimalism with warm material tones, nature-inspired elements, and carefully curated details to create a home that feels elegant yet deeply relaxing. The design language focuses on clean geometry, earthy textures, and functional planning while introducing experiential spaces that elevate everyday living.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/sky-garden/cover.jpg"
 location: "Baner, Pune"
 category: "residential"
 completionDate: "2022-11-01"
@@ -12,16 +12,35 @@ area: "1300"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/sky-garden/01.jpg",
+        "@assets/projects/sky-garden/02.jpg",
+        "@assets/projects/sky-garden/03.jpg",
+        "@assets/projects/sky-garden/04.jpg",
+        "@assets/projects/sky-garden/05.jpg",
+        "@assets/projects/sky-garden/06.jpg",
+        "@assets/projects/sky-garden/07.jpg",
+        "@assets/projects/sky-garden/08.jpg",
+        "@assets/projects/sky-garden/09.jpg",
+        "@assets/projects/sky-garden/10.jpg",
+        "@assets/projects/sky-garden/11.jpg",
+        "@assets/projects/sky-garden/12.jpg",
+        "@assets/projects/sky-garden/13.jpg",
+        "@assets/projects/sky-garden/14.jpg",
+        "@assets/projects/sky-garden/15.jpg",
+        "@assets/projects/sky-garden/16.jpg",
+        "@assets/projects/sky-garden/17.jpg",
+        "@assets/projects/sky-garden/18.jpg",
+        "@assets/projects/sky-garden/19.jpg",
+        "@assets/projects/sky-garden/20.jpg",
+        "@assets/projects/sky-garden/21.jpg",
+        "@assets/projects/sky-garden/22.jpg",
+        "@assets/projects/sky-garden/23.jpg",
+        "@assets/projects/sky-garden/24.jpg",
+        "@assets/projects/sky-garden/25.jpg",
+        "@assets/projects/sky-garden/26.jpg",
+        "@assets/projects/sky-garden/27.jpg",
+        "@assets/projects/sky-garden/28.jpg",
+        "@assets/projects/sky-garden/29.jpg",
     ]
 ---
 

@@ -4,7 +4,7 @@ overview:
     [
         "A thoughtfully designed contemporary residence curated with a soft, minimal aesthetic and functional spatial planning. The project focuses on creating calm, light-filled interiors through a balanced use of muted tones, clean detailing, subtle textures, and elegant furniture compositions. Every space was designed to feel warm, uncluttered, and highly livable while maintaining a refined visual identity.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/linear/cover.jpg"
 location: "Baner, Pune"
 category: "residential"
 completionDate: "2024-06-01"
@@ -12,16 +12,16 @@ area: "700"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/linear/01.jpg",
+        "@assets/projects/linear/02.jpg",
+        "@assets/projects/linear/03.jpg",
+        "@assets/projects/linear/04.jpg",
+        "@assets/projects/linear/05.jpg",
+        "@assets/projects/linear/06.jpg",
+        "@assets/projects/linear/07.jpg",
+        "@assets/projects/linear/08.jpg",
+        "@assets/projects/linear/09.jpg",
+        "@assets/projects/linear/10.jpg",
     ]
 ---
 

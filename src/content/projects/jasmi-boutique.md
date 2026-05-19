@@ -5,7 +5,7 @@ overview: [
         "
         The design balances warmth, openness, and product visibility, allowing the merchandise to become the hero of the space while subtle design details enhance the overall ambience.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/jasmi-boutique/cover.jpg"
 location: "Kothrud, Pune"
 category: "commercial"
 completionDate: "2018-04-01"
@@ -13,16 +13,9 @@ area: "500"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/jasmi-boutique/01.jpg",
+        "@assets/projects/jasmi-boutique/02.jpg",
+        "@assets/projects/jasmi-boutique/03.jpg",
     ]
 ---
 

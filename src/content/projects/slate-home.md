@@ -4,7 +4,7 @@ overview:
     [
         "A modern contemporary apartment designed with a clean, minimal aesthetic while maintaining warmth and comfort throughout the space. The project focuses on functional planning, understated luxury, and visually calm interiors achieved through a neutral palette, soft textures, sleek detailing, and carefully curated accent elements.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/slate-home/cover.jpg"
 location: "Keshavnagar, Pune"
 category: "residential"
 completionDate: "2024-08-01"
@@ -12,16 +12,22 @@ area: "1000"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/slate-home/01.jpg",
+        "@assets/projects/slate-home/02.jpg",
+        "@assets/projects/slate-home/03.jpg",
+        "@assets/projects/slate-home/04.jpg",
+        "@assets/projects/slate-home/05.jpg",
+        "@assets/projects/slate-home/06.jpg",
+        "@assets/projects/slate-home/07.jpg",
+        "@assets/projects/slate-home/08.jpg",
+        "@assets/projects/slate-home/09.jpg",
+        "@assets/projects/slate-home/10.jpg",
+        "@assets/projects/slate-home/11.jpg",
+        "@assets/projects/slate-home/12.jpg",
+        "@assets/projects/slate-home/13.jpg",
+        "@assets/projects/slate-home/14.jpg",
+        "@assets/projects/slate-home/15.jpg",
+        "@assets/projects/slate-home/16.jpg",
     ]
 ---
 

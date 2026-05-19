@@ -4,7 +4,7 @@ overview:
     [
         "A customer-centric automobile showroom designed to balance brand presence with a comfortable, interactive environment. The space moves beyond a conventional display format to create a more engaging and experience-driven setting.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/amana-toyota/cover.jpg"
 location: "Koduvally, Calicut"
 category: "commercial"
 completionDate: "2025-02-01"
@@ -13,16 +13,16 @@ scope: "Interior Design & Execution"
 
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/amana-toyota/01.jpg",
+        "@assets/projects/amana-toyota/02.jpg",
+        "@assets/projects/amana-toyota/03.jpg",
+        "@assets/projects/amana-toyota/04.jpg",
+        "@assets/projects/amana-toyota/05.jpg",
+        "@assets/projects/amana-toyota/06.jpg",
+        "@assets/projects/amana-toyota/07.jpg",
+        "@assets/projects/amana-toyota/08.jpg",
+        "@assets/projects/amana-toyota/09.jpg",
+        "@assets/projects/amana-toyota/10.jpg",
     ]
 ---
 

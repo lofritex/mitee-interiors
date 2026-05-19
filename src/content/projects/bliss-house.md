@@ -5,7 +5,7 @@ overview: [
         "
         The design language combines modern minimalism with earthy materials, layered textures, and subtle greenery, resulting in a home that feels refined yet highly lived-in. Neutral tones, soft lighting, and carefully curated material palettes help create a timeless atmosphere throughout the residence.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/bliss-house/cover.jpg"
 location: "Ashokpuram, Calicut"
 category: "residential"
 completionDate: "2026-03-01"
@@ -13,16 +13,26 @@ area: "800"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/bliss-house/01.jpg",
+        "@assets/projects/bliss-house/02.jpg",
+        "@assets/projects/bliss-house/03.jpg",
+        "@assets/projects/bliss-house/04.jpg",
+        "@assets/projects/bliss-house/05.jpg",
+        "@assets/projects/bliss-house/06.png",
+        "@assets/projects/bliss-house/07.jpg",
+        "@assets/projects/bliss-house/08.jpg",
+        "@assets/projects/bliss-house/09.jpg",
+        "@assets/projects/bliss-house/10.jpg",
+        "@assets/projects/bliss-house/11.jpg",
+        "@assets/projects/bliss-house/12.jpg",
+        "@assets/projects/bliss-house/13.jpg",
+        "@assets/projects/bliss-house/14.jpg",
+        "@assets/projects/bliss-house/15.jpg",
+        "@assets/projects/bliss-house/16.jpg",
+        "@assets/projects/bliss-house/17.jpg",
+        "@assets/projects/bliss-house/18.jpg",
+        "@assets/projects/bliss-house/19.jpg",
+        "@assets/projects/bliss-house/20.jpg",
     ]
 ---
 

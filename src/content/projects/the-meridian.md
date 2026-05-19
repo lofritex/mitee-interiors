@@ -4,7 +4,7 @@ overview:
     [
         "A contemporary residential interior designed with a balance of warmth, functionality, and understated luxury. The space was envisioned to feel calm, timeless, and visually seamless while maintaining practicality for everyday living. Through a muted material palette, soft forms, and carefully layered textures, the design creates an atmosphere that feels refined yet comfortable.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/the-meridian/cover.jpg"
 location: "Kurla, Mumbai"
 category: "residential"
 completionDate: "2022-03-01"
@@ -12,16 +12,26 @@ area: "500"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/the-meridian/01.jpg",
+        "@assets/projects/the-meridian/02.jpg",
+        "@assets/projects/the-meridian/03.jpg",
+        "@assets/projects/the-meridian/04.jpg",
+        "@assets/projects/the-meridian/05.jpg",
+        "@assets/projects/the-meridian/06.jpg",
+        "@assets/projects/the-meridian/07.jpg",
+        "@assets/projects/the-meridian/08.jpg",
+        "@assets/projects/the-meridian/09.jpg",
+        "@assets/projects/the-meridian/11.jpg",
+        "@assets/projects/the-meridian/12.jpg",
+        "@assets/projects/the-meridian/13.jpg",
+        "@assets/projects/the-meridian/14.jpg",
+        "@assets/projects/the-meridian/15.jpg",
+        "@assets/projects/the-meridian/16.jpg",
+        "@assets/projects/the-meridian/17.jpg",
+        "@assets/projects/the-meridian/18.jpg",
+        "@assets/projects/the-meridian/19.jpg",
+        "@assets/projects/the-meridian/20.jpg",
+        "@assets/projects/the-meridian/21.jpg",
     ]
 ---
 

@@ -4,7 +4,7 @@ overview:
     [
         "A contemporary luxury residence designed with a balanced blend of warmth, functionality, and refined aesthetics. The project focuses on creating a visually rich yet highly practical living environment through clean detailing, layered textures, custom furniture, and thoughtfully curated materials.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/eccentric/cover.jpg"
 location: "Baner, Pune"
 category: "residential"
 completionDate: "2022-03-01"
@@ -12,16 +12,18 @@ area: "4000"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/eccentric/01.jpg",
+        "@assets/projects/eccentric/02.jpg",
+        "@assets/projects/eccentric/03.jpg",
+        "@assets/projects/eccentric/04.jpg",
+        "@assets/projects/eccentric/05.jpg",
+        "@assets/projects/eccentric/06.jpg",
+        "@assets/projects/eccentric/07.jpg",
+        "@assets/projects/eccentric/08.jpg",
+        "@assets/projects/eccentric/09.jpg",
+        "@assets/projects/eccentric/10.jpg",
+        "@assets/projects/eccentric/11.jpg",
+        "@assets/projects/eccentric/12.jpg",
     ]
 ---
 

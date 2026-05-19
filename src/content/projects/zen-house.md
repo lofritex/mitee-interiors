@@ -4,7 +4,7 @@ overview:
     [
         "A refined contemporary residence designed with a minimalist yet warm aesthetic, where clean architectural lines, muted tones, and soft textures come together to create a calm and sophisticated living environment. The design language focuses on understated luxury through thoughtful detailing, functional planning, and timeless material selections. Every space was curated to feel visually light, highly functional, and emotionally comforting while maintaining a strong modern identity.",
     ]
-cover: "@assets/projects/amana-toyota/cover.png"
+cover: "@assets/projects/zen-house/cover.jpg"
 location: "Hadapsar, Pune"
 category: "residential"
 completionDate: "2023-10-01"
@@ -12,16 +12,19 @@ area: "800"
 scope: "Interior Design & Execution"
 images:
     [
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
-        "@assets/projects/amana-toyota/cover.png",
+        "@assets/projects/zen-house/01.jpg",
+        "@assets/projects/zen-house/02.jpg",
+        "@assets/projects/zen-house/03.jpg",
+        "@assets/projects/zen-house/04.jpg",
+        "@assets/projects/zen-house/05.jpg",
+        "@assets/projects/zen-house/06.jpg",
+        "@assets/projects/zen-house/07.jpg",
+        "@assets/projects/zen-house/08.jpg",
+        "@assets/projects/zen-house/09.jpg",
+        "@assets/projects/zen-house/10.jpg",
+        "@assets/projects/zen-house/11.jpg",
+        "@assets/projects/zen-house/12.jpg",
+        "@assets/projects/zen-house/13.jpg",
     ]
 ---
 
