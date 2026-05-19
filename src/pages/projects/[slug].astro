@@ -1,0 +1,194 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../Layouts/MainLayout.astro";
+import { Expand, Calendar, Handshake, MapPin, Building2, House, ChevronLeft } from "@lucide/astro";
+import { Image } from "astro:assets";
+import { toTitleCase } from "@utils/titleCase";
+
+type Project = CollectionEntry<"projects">;
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+
+    return projects.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props as { project: Project };
+
+const { Content } = await project.render();
+
+const formattedDate = project.data.completionDate.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+});
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/grid";
+---
+
+<MainLayout page="projects">
+    <div class="relative my-10 flex flex-col justify-center md:my-20 md:flex-row md:items-center">
+        <div class="left-0 md:absolute">
+            <a href="/projects">
+                <button class="flex cursor-pointer items-center text-xl">
+                    <ChevronLeft /> All Projects
+                </button>
+            </a>
+        </div>
+
+        <h1 class="my-8 text-center text-4xl font-semibold">
+            {project.data.title}
+        </h1>
+    </div>
+
+    <div class="my-6 flex justify-between">
+        <div class="flex items-center gap-2">
+            <MapPin class="size-5" />
+            {project.data.location}
+        </div>
+
+        <div>
+            {formattedDate}
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="aspect-4/3">
+            <Image src={project.data.cover} alt={project.data.title} class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-col justify-between gap-4">
+            <div>
+                <h2 class="my-4 text-3xl font-bold">Project Overview</h2>
+                {project.data.overview?.map((para) => <p class="text-lg">{para}</p>)}
+            </div>
+
+            <div class="my-4 grid grid-cols-1 gap-4 text-lg sm:grid-cols-2">
+                <div class="flex gap-2 sm:flex-col">
+                    <span class="font-medium"> Area : </span>
+                    <span class="flex items-center gap-2"><Expand /> {project.data.area} sq.ft</span>
+                </div>
+                <div class="flex gap-2 sm:flex-col">
+                    <span class="font-medium">Scope : </span>
+                    <span class="flex items-center gap-2"><Handshake /> {project.data.scope}</span>
+                </div>
+                <div class="flex gap-2 sm:flex-col">
+                    <span class="font-medium"> Completion Date : </span>
+                    <span class="flex items-center gap-2"><Calendar />{formattedDate}</span>
+                </div>
+                <div class="flex gap-2 sm:flex-col">
+                    <span class="font-medium">Category : </span>
+                    <span class="flex items-center gap-2">
+                        {project.data.category == "commercial" ? <Building2 /> : <House />}
+
+                        {toTitleCase(project.data.category)}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper project-swiper">
+        <div class="swiper-wrapper py-10">
+            {
+                project.data.images?.map((img) => (
+                    <div class="swiper-slide aspect-square w-[320px]">
+                        <a
+                            href={img.src}
+                            class="glightbox-trigger block h-full w-full"
+                            data-gallery={project.data.title}
+                            data-title={project.data.title}
+                        >
+                            <Image
+                                src={img}
+                                alt={project.data.title}
+                                class="pointer-events-none h-full w-full object-cover object-center"
+                            />
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <article class="prose-neutral prose lg:prose-lg mx-auto my-20 min-w-full">
+        <Content />
+    </article>
+
+    <div class="flex h-[50vh] flex-col items-center justify-center">
+        <p class="text-lg">Like what you see?</p>
+        <h3 class="mt-4 mb-8 text-2xl font-bold">Transform your space next</h3>
+        <a href="/contact-us">
+            <button class="cursor-pointer rounded-xl border border-black px-6 py-2 text-lg">Book a call</button>
+        </a>
+    </div>
+</MainLayout>
+
+<style>
+    :root {
+        --swiper-theme-color: black;
+    }
+</style>
+
+<script>
+    import GLightbox from "glightbox";
+    import "glightbox/dist/css/glightbox.min.css";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        GLightbox({
+            selector: ".glightbox-trigger",
+            loop: true,
+            openEffect: "zoom",
+            closeEffect: "zoom",
+            slideEffect: "slide",
+        });
+    });
+</script>
+
+<script>
+    import Swiper from "swiper";
+    import { Pagination, Navigation, Grid } from "swiper/modules";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        new Swiper(".project-swiper", {
+            modules: [Pagination, Navigation, Grid],
+            slidesPerView: 5,
+            spaceBetween: 20,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 2,
+                        fill: "row",
+                    },
+                },
+                640: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 1,
+                    },
+                },
+                1024: {
+                    slidesPerView: 4,
+                    grid: {
+                        rows: 1,
+                    },
+                },
+            },
+        });
+    });
+</script>
