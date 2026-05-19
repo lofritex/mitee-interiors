@@ -28,6 +28,7 @@ const formattedDate = project.data.completionDate.toLocaleDateString("en-US", {
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/grid";
 ---
 
 <MainLayout page="projects">
@@ -96,7 +97,18 @@ import "swiper/css/pagination";
             {
                 project.data.images?.map((img) => (
                     <div class="swiper-slide aspect-square w-[320px]">
-                        <Image src={img} alt={project.data.title} class="h-full w-full object-cover object-center" />
+                        <a
+                            href={img.src}
+                            class="glightbox-trigger block h-full w-full"
+                            data-gallery={project.data.title}
+                            data-title={project.data.title}
+                        >
+                            <Image
+                                src={img}
+                                alt={project.data.title}
+                                class="pointer-events-none h-full w-full object-cover object-center"
+                            />
+                        </a>
                     </div>
                 ))
             }
@@ -126,12 +138,27 @@ import "swiper/css/pagination";
 </style>
 
 <script>
-    import Swiper from "swiper";
-    import { Pagination, Navigation } from "swiper/modules";
+    import GLightbox from "glightbox";
+    import "glightbox/dist/css/glightbox.min.css";
 
     document.addEventListener("DOMContentLoaded", () => {
-        const swiper = new Swiper(".project-swiper", {
-            modules: [Pagination, Navigation],
+        GLightbox({
+            selector: ".glightbox-trigger",
+            loop: true,
+            openEffect: "zoom",
+            closeEffect: "zoom",
+            slideEffect: "slide",
+        });
+    });
+</script>
+
+<script>
+    import Swiper from "swiper";
+    import { Pagination, Navigation, Grid } from "swiper/modules";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        new Swiper(".project-swiper", {
+            modules: [Pagination, Navigation, Grid],
             slidesPerView: 5,
             spaceBetween: 20,
 
@@ -144,12 +171,22 @@ import "swiper/css/pagination";
             breakpoints: {
                 0: {
                     slidesPerView: 2,
+                    grid: {
+                        rows: 2,
+                        fill: "row",
+                    },
                 },
                 640: {
                     slidesPerView: 3,
+                    grid: {
+                        rows: 1,
+                    },
                 },
                 1024: {
                     slidesPerView: 4,
+                    grid: {
+                        rows: 1,
+                    },
                 },
             },
         });
