@@ -64,15 +64,25 @@ import { Mail, MapPin, Phone } from "@lucide/astro";
                     required
                 />
 
-                <input
-                    type="text"
-                    autocomplete="transaction-amount"
-                    name="entry.1935969012"
-                    id=""
-                    placeholder="Tenative Budget"
-                    class="border-b p-2"
-                    required
-                />
+                <div class="flex flex-col">
+                    <select
+                        name="entry.1935969012"
+                        id="budget"
+                        class="border-b bg-white p-2"
+                        required
+                    >
+                        <option value="" disabled selected>Select Tenative Budget</option>
+                        <option value="₹10 Lakhs - ₹15 Lakhs">₹10 Lakhs - ₹15 Lakhs</option>
+                        <option value="₹15 Lakhs - ₹20 Lakhs">₹15 Lakhs - ₹20 Lakhs</option>
+                        <option value="₹20 Lakhs - ₹25 Lakhs">₹20 Lakhs - ₹25 Lakhs</option>
+                        <option value="₹25 Lakhs - ₹30 Lakhs">₹25 Lakhs - ₹30 Lakhs</option>
+                        <option value="₹30 Lakhs - ₹35 Lakhs">₹30 Lakhs - ₹35 Lakhs</option>
+                        <option value="₹35 Lakhs & Above">₹35 Lakhs & Above</option>
+                    </select>
+                    <span id="budget_error" class="mt-1 hidden text-xs text-red-500"
+                        >Please select a valid budget.</span
+                    >
+                </div>
 
                 <textarea
                     name="entry.1064524180"
@@ -91,24 +101,41 @@ import { Mail, MapPin, Phone } from "@lucide/astro";
         </div>
         <div class="mx-4 flex-1">
             <div>
-                <p class="text-xl leading-normal font-light md:text-3xl">
+                <p class="text-xl leading-normal font-light md:text-2xl">
                     We'd love to understand your space, your requirements, and how you envision
                     living or working within it
                 </p>
             </div>
             <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <Phone class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">{Contact.phone}</p>
+                <span class="p-2"> <Phone class="size-8 stroke-1" /></span>
+                <p class="text-xl font-light">{Contact.phone}</p>
             </div>
             <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <Mail class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">{Contact.email}</p>
+                <span class="p-2"> <Mail class="size-8 stroke-1" /></span>
+                <p class="text-xl font-light">{Contact.email}</p>
             </div>
-            <div class="my-6 flex items-center space-x-4">
-                <span class="border p-2"> <MapPin class="size-8 stroke-1 sm:size-10" /></span>
-                <p class="text-xl font-light md:text-2xl">
-                    With Offices in Pune and Calicut, we serve clients across India.
-                </p>
+            <div class="my-6 flex space-x-4">
+                <section class="text-xl font-light">
+                    <ul class="ml-2 space-y-4">
+                        <li>
+                            <h3 class="my-2">Pune Office</h3>
+                            <p class="pl-4 text-base">
+                                Office No. G1, Ground Floor, Bharati Niwas Housing Society<br />
+                                Jaygad Marg, Lane Opp. to Income Tax Office<br />
+                                Erandawane, Pune 411004
+                            </p>
+                        </li>
+                        <hr />
+                        <li>
+                            <h3 class="my-2">Calicut Office</h3>
+                            <p class="pl-4 text-base">
+                                Taas Flora Mini, 64/816<br />
+                                Mini Bypass Road, Near Old Passport Office<br />
+                                Kozhikode, Kerala 673006
+                            </p>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
