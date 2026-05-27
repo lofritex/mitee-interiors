@@ -10,23 +10,36 @@ import { ChevronLeft, ChevronRight, MapPin } from "@lucide/astro";
 import { toTitleCase } from "@utils/titleCase.ts";
 import { getCollection } from "astro:content";
 
+import { shuffle } from "@utils/shuffle";
+
 const rawPosts = await getCollection("projects");
 
 const posts = rawPosts.sort(
     (a, b) => b.data.completionDate.getTime() - a.data.completionDate.getTime(),
 );
 
+const featuredSlugs = ["sky-garden", "zen-house", "eccentric"];
+
+const featuredProjects = posts
+    .filter((p) => featuredSlugs.includes(p.slug))
+    .map((d) => ({
+        slug: d.slug,
+        projectName: d.data.title,
+        images: shuffle(d.data.images!).slice(0, 4),
+    }));
+
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 ---
 
 <MainLayout page="projects">
     <section class="border-b pb-10">
         <h3 class="my-10 text-center text-3xl">Highlights</h3>
 
-        <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-3">
+        <!-- <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-3">
             <div
                 class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]"
             >
@@ -178,6 +191,38 @@ import "swiper/css/pagination";
                             ))
                     }
                 </div>
+            </div>
+        </div> -->
+
+        <div class="swiper highlight-swiper">
+            <div class="swiper-wrapper">
+                {
+                    featuredProjects.map((project) => (
+                        <div class="swiper-slide">
+                            <div class="grid h-[80vh] grid-cols-3 grid-rows-2 gap-2">
+                                {project.images?.map((image, idx) => (
+                                    <div
+                                        class={`relative cursor-pointer ${idx % 3 == 0 ? "col-span-2" : ""}`}
+                                    >
+                                        <a href={`/projects/${project.slug}`}>
+                                            <Image
+                                                src={image}
+                                                alt=""
+                                                class="h-full w-full object-cover object-center brightness-80 hover:brightness-100"
+                                            />
+                                        </a>
+
+                                        {idx == 3 && (
+                                            <div class="absolute right-0 bottom-0 z-10 flex h-10 items-center justify-center bg-white p-4">
+                                                {project.projectName}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     </section>
@@ -382,7 +427,7 @@ import "swiper/css/pagination";
     }
 
     function setupFilters() {
-        const wrapper = document.querySelector(".swiper-wrapper");
+        const wrapper = document.querySelector(".projects-swiper .swiper-wrapper");
         const buttons = document.querySelectorAll(".filter-btn");
 
         if (!wrapper) return;
@@ -423,5 +468,22 @@ import "swiper/css/pagination";
     document.addEventListener("DOMContentLoaded", () => {
         setupFilters();
         initSwiper();
+    });
+</script>
+
+<script>
+    import Swiper from "swiper";
+    import { Autoplay } from "swiper/modules";
+
+    const swiper = new Swiper(".highlight-swiper", {
+        modules: [Autoplay],
+        loop: true,
+        speed: 3000,
+        spaceBetween: 8,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: "auto",
     });
 </script>
