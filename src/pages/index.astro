@@ -12,24 +12,36 @@ import Myself from "../assets/myself.jpg";
 
 import ClientImage from "../assets/client.png";
 import { CircleArrowRight } from "@lucide/astro";
+
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+import { carouselData } from "../data/carousel";
 ---
 
 <MainLayout page="home">
     <section class="border-b py-10">
-        <div class="relative">
-            <Image
-                src={Lander}
-                alt="Dinning Room Decorations"
-                class="min-h-[calc(100dvh-300px)] bg-center object-cover"
-            />
-
-            <div
-                class="to-peach via-peach absolute right-0 bottom-0 left-0 flex h-24 items-center justify-center bg-linear-to-b from-transparent via-80%"
-            >
-                <p class="text-center text-2xl text-white">
-                    Design with Depth, Detail, and Distinction
-                </p>
+        <div class="swiper carousel">
+            <div class="swiper-wrapper">
+                {
+                    carouselData.map((carousel) => (
+                        <div class="swiper-slide relative">
+                            <Image
+                                src={carousel.image}
+                                alt="Dinning Room Decorations"
+                                class="aspect-2/1 min-h-[calc(80dvh)] bg-center object-cover md:min-h-[calc(100dvh-300px)]"
+                            />
+                            <div class="to-peach via-peach absolute right-0 bottom-0 left-0 flex h-24 items-center justify-center bg-linear-to-b from-transparent via-80%">
+                                <p class="text-center text-2xl text-white">
+                                    Design with Depth, Detail, and Distinction
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
+
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -163,3 +175,30 @@ import { CircleArrowRight } from "@lucide/astro";
         </div>
     </section>
 </MainLayout>
+
+<style>
+    :root {
+        --swiper-theme-color: #fff;
+    }
+</style>
+
+<script>
+    import Swiper from "swiper";
+    import { Autoplay, Pagination } from "swiper/modules";
+
+    const swiper = new Swiper(".carousel", {
+        modules: [Autoplay, Pagination],
+        effect: "fade",
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+        initialSlide: 2,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+    });
+</script>
