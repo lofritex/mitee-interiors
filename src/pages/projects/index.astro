@@ -12,7 +12,9 @@ import { getCollection } from "astro:content";
 
 const rawPosts = await getCollection("projects");
 
-const posts = rawPosts.sort((a, b) => b.data.completionDate.getTime() - a.data.completionDate.getTime());
+const posts = rawPosts.sort(
+    (a, b) => b.data.completionDate.getTime() - a.data.completionDate.getTime(),
+);
 
 import "swiper/css";
 import "swiper/css/grid";
@@ -25,9 +27,13 @@ import "swiper/css/pagination";
         <h3 class="my-10 text-center text-3xl">Highlights</h3>
 
         <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-3">
-            <div class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]">
+            <div
+                class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]"
+            >
                 <div class="absolute inset-0">
-                    <div class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden">
+                    <div
+                        class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden"
+                    >
                         <div
                             class="flex h-32 w-full items-center justify-center bg-linear-to-t from-white to-transparent"
                         >
@@ -70,9 +76,13 @@ import "swiper/css/pagination";
                 </div>
             </div>
 
-            <div class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]">
+            <div
+                class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]"
+            >
                 <div class="absolute inset-0">
-                    <div class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden">
+                    <div
+                        class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden"
+                    >
                         <div
                             class="flex h-32 w-full items-center justify-center bg-linear-to-t from-white to-transparent"
                         >
@@ -118,9 +128,13 @@ import "swiper/css/pagination";
                 </div>
             </div>
 
-            <div class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]">
+            <div
+                class="group relative h-[30vh] w-full overflow-hidden border border-black md:h-[70vh]"
+            >
                 <div class="absolute inset-0">
-                    <div class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden">
+                    <div
+                        class="absolute inset-0 z-10 flex items-end justify-center group-hover:hidden"
+                    >
                         <div
                             class="flex h-32 w-full items-center justify-center bg-linear-to-t from-white to-transparent"
                         >
@@ -193,7 +207,10 @@ import "swiper/css/pagination";
             <div class="swiper-wrapper pb-12">
                 {
                     posts.map((post) => (
-                        <div class="swiper-slide h-auto border md:border-none" data-category={post.data.category}>
+                        <div
+                            class="swiper-slide h-auto border md:border-none"
+                            data-category={post.data.category}
+                        >
                             <div class="group relative overflow-hidden">
                                 <div class="absolute inset-0 z-10 flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                                     <a href={`/projects/${post.slug}`}>
