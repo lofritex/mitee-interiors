@@ -15,8 +15,8 @@
 @theme {
     /* This overrides the default 'font-sans' stack used by Tailwind */
     --font-sans:
-        "Jost", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+        "Jost", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
 
     --color-peach: #9c8b7e;
 }

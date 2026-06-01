@@ -59,7 +59,11 @@ import "swiper/css/grid";
 
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div class="aspect-4/3">
-            <Image src={project.data.cover} alt={project.data.title} class="h-full w-full object-cover" />
+            <Image
+                src={project.data.cover}
+                alt={project.data.title}
+                class="h-full w-full object-cover"
+            />
         </div>
         <div class="flex flex-col justify-between gap-4">
             <div>
@@ -70,7 +74,8 @@ import "swiper/css/grid";
             <div class="my-4 grid grid-cols-1 gap-4 text-lg sm:grid-cols-2">
                 <div class="flex gap-2 sm:flex-col">
                     <span class="font-medium"> Area : </span>
-                    <span class="flex items-center gap-2"><Expand /> {project.data.area} sq.ft</span>
+                    <span class="flex items-center gap-2"><Expand /> {project.data.area} sq.ft</span
+                    >
                 </div>
                 <div class="flex gap-2 sm:flex-col">
                     <span class="font-medium">Scope : </span>
@@ -121,7 +126,9 @@ import "swiper/css/grid";
         <p class="text-lg">Like what you see?</p>
         <h3 class="mt-4 mb-8 text-2xl font-bold">Transform your space next</h3>
         <a href="/contact-us">
-            <button class="cursor-pointer rounded-xl border border-black px-6 py-2 text-lg">Book a call</button>
+            <button class="cursor-pointer rounded-xl border border-black px-6 py-2 text-lg"
+                >Book a call</button
+            >
         </a>
     </div>
 </MainLayout>

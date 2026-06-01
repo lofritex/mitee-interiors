@@ -2,13 +2,11 @@
 import { Image } from "astro:assets";
 import MainLayout from "../Layouts/MainLayout.astro";
 
-import AboutImg from "../assets/aboutImg.png";
-
 import About1 from "../assets/about1.png";
 import About2 from "../assets/about2.png";
 
-import Myself from "../assets/myself.jpg";
 import Team from "../assets/team.jpg";
+import ClientReviews from "../components/ClientReviews.astro";
 
 const qualities = [
     {
@@ -40,7 +38,11 @@ const aboutDetails = [
     {
         title: "Our Team",
         content: [
-            "Led by Principal Designer Sanjali Naik, our team is a warm blend of creative designers and skilled craftsmen who treat every project like our own. We work closely with you to turn your vision into a beautiful, functional reality. At Mitee Interiors, we don’t just design spaces—we create the heart of your home.",
+            "At Mitee Interiors, we are a close-knit team of designers, project coordinators, and site professionals who share a passion for thoughtful design and meticulous execution.",
+
+            "Led by founder and principal designer Sanjali Naik, our team combines creativity with technical expertise to guide projects from concept to completion. We work collaboratively with clients, consultants, vendors, and contractors to ensure that every detail is considered and every design vision is translated effectively on site.",
+
+            "What sets our team apart is our hands-on approach. We believe successful projects are built through communication, coordination, and a genuine commitment to understanding our clients' needs.",
         ],
         img: Team,
     },
@@ -48,16 +50,30 @@ const aboutDetails = [
     {
         title: "Our Story",
         content: [
-            "Derived from the Sanskrit word “Bhumitee,” meaning dimension, Mitee Interiors is a design studio focused on creating refined, functional, and thoughtfully curated interiors.",
-            "With over 8 years of experience, we specialise in residential and commercial interior design, delivering spaces that balance aesthetics, practicality, and long-term value. From concept to execution, every project is approached with attention to detail and a deep understanding of our client's lifestyles and business needs. ",
+            "Mitee Interiors was founded by Sanjali Naik with a passion for creating spaces that are both functional and aesthetically timeless. After gaining two years of hands-on industry experience, Sanjali established Mitee Interiors with the vision of delivering thoughtful, client-centric design solutions.",
+
+            "Sanjali graduated as the topper of her Interior Design Diploma program and also holds a Bachelor of Commerce degree, bringing together creative expertise and business acumen. What began as a small-scale design practice has steadily evolved into a multidisciplinary design studio undertaking larger and more complex residential and commercial projects.",
+
+            "Today, with offices in Pune and Calicut and over 8 years of industry experience, Mitee Interiors serves clients across India. While the scale of our projects has grown, our philosophy remains unchanged. We believe that exceptional design comes from attention, involvement, and a deep understanding of each client's needs.",
+
+            "As we continue to take on larger projects, our focus is not on the number of sites we handle, but on the quality of design we deliver. We consciously prioritize a design-oriented approach, ensuring that every project receives the time, thought, and attention it deserves. For us, success is measured not by volume, but by the value we create through meaningful, well-considered design.",
+
+            "This commitment allows us to create spaces that are not only visually appealing but also functional, timeless, and uniquely tailored to the people who use them.",
         ],
         img: About1,
     },
     {
         title: "What Do We Do?",
         content: [
-            " We design interiors that feel personal, intentional, and enduring. Whether it's a home or a workspace, our process begins with understanding how you live, move, and interact with your environment.",
-            "Each design is developed from scratch—carefully layered with materiality, proportion, and detail—to create spaces that are not only beautiful, but meaningful and lasting.",
+            "At Mitee Interiors, we offer Interior Design, Architectural Consultation, Façade Design, and Landscape Design services, helping clients create spaces that are cohesive, functional, and thoughtfully designed from the inside out.",
+
+            "We believe that great design begins with understanding people. Many clients know how they want their space to feel, but often find it difficult to translate their ideas into a clear vision. Our role is to help bring clarity to that vision and transform it into a space that truly reflects their lifestyle and aspirations.",
+
+            "We take the time to understand our clients' preferences, daily routines, and design sensibilities. By carefully studying the themes, materials, and aesthetics they are naturally drawn to, we create spaces that are uniquely tailored to them. Rather than following short-lived trends, we focus on designing environments that are timeless, functional, and deeply personal.",
+
+            "Whether we are designing a residence, commercial space, healthcare facility, or hospitality project, our approach remains the same: to create spaces that balance beauty with practicality and enhance the way people experience their environment.",
+
+            "The greatest reward for us is seeing our clients truly live in the spaces we design—whether it is enjoying quiet moments at home, gathering with loved ones, welcoming customers into their business, or carrying out their everyday routines with ease. Knowing that our designs become a meaningful part of their daily lives is what inspires us to do what we do.",
         ],
         img: About2,
     },
@@ -71,19 +87,32 @@ const aboutDetails = [
                 const isFlipped = index % 2 === 1;
 
                 return (
-                    <div class:list={["flex flex-col items-center sm:flex-row", { "sm:flex-row-reverse": isFlipped }]}>
+                    <div
+                        class:list={[
+                            "flex flex-col items-center sm:flex-row",
+                            { "sm:flex-row-reverse": isFlipped },
+                        ]}
+                    >
                         <div class="flex-1 p-10">
-                            <Image src={detail.img} alt="" class="aspect-square bg-bottom object-cover" />
+                            <Image
+                                src={detail.img}
+                                alt=""
+                                class="aspect-square bg-bottom object-cover"
+                            />
                         </div>
                         <div class="flex-1">
                             <h3 class="my-4 text-center text-2xl">{detail.title}</h3>
                             <div class="flex flex-col gap-4">
                                 {Array.isArray(detail.content) ? (
                                     detail.content.map((paragraph) => (
-                                        <p class="mx-auto text-center text-lg font-light sm:text-left">{paragraph}</p>
+                                        <p class="mx-auto text-center text-lg font-light sm:text-left">
+                                            {paragraph}
+                                        </p>
                                     ))
                                 ) : (
-                                    <p class="mx-auto text-center text-lg font-light sm:text-left">{detail.content}</p>
+                                    <p class="mx-auto text-center text-lg font-light sm:text-left">
+                                        {detail.content}
+                                    </p>
                                 )}
                             </div>
                         </div>
@@ -100,7 +129,9 @@ const aboutDetails = [
             {
                 qualities.map((quality) => (
                     <div class="my-4 flex flex-col items-center border p-4 py-8 sm:flex-row">
-                        <h3 class="flex-[30%] px-4 py-8 text-center text-xl sm:text-2xl">{quality.label}</h3>
+                        <h3 class="flex-[30%] px-4 py-8 text-center text-xl sm:text-2xl">
+                            {quality.label}
+                        </h3>
                         <p class="flex-[70%] font-light">{quality.content}</p>
                     </div>
                 ))
@@ -108,43 +139,5 @@ const aboutDetails = [
         </div>
     </section>
 
-    <section class="py-10">
-        <h3 class="mb-10 text-center text-3xl">Client Reviews</h3>
-
-        <div class="flow-visible flex grid-cols-3 gap-4 overflow-x-auto sm:grid">
-            <div class="min-w-[80vw] border p-6 sm:min-w-0">
-                <p class="aspect-square text-center font-light">
-                    "Thanks a lot for all the hard work. The house is really looking good. Touch wood. I really
-                    appreciate all the efforts and time you had given to our home. It was really good to work with you.
-                    The professionalism you carry is good and keep it up. We started our discussions in Oct-Nov and you
-                    had everything very clear in your mind (approach, Designs, Selections). I wish you all the very best
-                    and I am sure you would reach new heights for sure."
-                </p>
-
-                <p class="my-2 text-center font-medium">- Abhishek & Kirti Hadap</p>
-            </div>
-            <div class="min-w-[80vw] border p-6 sm:min-w-0">
-                <p class="aspect-square text-center font-light">
-                    "Creativity and simplicity at its best....!!! We selected Saanjali from the number of options that
-                    we had and when we saw the first design that she proposed, we knew that something great is coming.
-                    We trusted in her talent and she didn't let us down. Very unique design elements used for TV pannel,
-                    terrace garden, bathroom and bedrooms which we had never seen anywhere. Special thanks for making my
-                    dream terraces garden, a reality. Our relatives and friends just couldn't stop complimenting our
-                    house."
-                </p>
-
-                <p class="my-2 text-center font-medium">- Hemant & Akshata Sonawane</p>
-            </div>
-            <div class="min-w-[80vw] border p-6 sm:min-w-0">
-                <p class="aspect-square text-center font-light">
-                    "First of all thank you so much for creating my dream office just the way I wanted. I had so many
-                    ideas when I started thinking about the office interior and offcourse I shared all of my ideas with
-                    saanjali. What I really liked about her is that she actually considers your choice and ideas while
-                    designing. "
-                </p>
-
-                <p class="my-2 text-center font-medium">- CA Mayur Tapkir</p>
-            </div>
-        </div>
-    </section>
+    <ClientReviews />
 </MainLayout>
