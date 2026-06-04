@@ -89,8 +89,8 @@ const aboutDetails = [
                 return (
                     <div
                         class:list={[
-                            "flex flex-col items-center sm:flex-row",
-                            { "sm:flex-row-reverse": isFlipped },
+                            "flex flex-col items-center lg:flex-row",
+                            { "lg:flex-row-reverse": isFlipped },
                         ]}
                     >
                         <div class="flex-1 p-10">
@@ -110,7 +110,7 @@ const aboutDetails = [
                                         </p>
                                     ))
                                 ) : (
-                                    <p class="mx-auto text-center text-lg font-light sm:text-left">
+                                    <p class="mx-auto text-center text-lg font-light lg:text-left">
                                         {detail.content}
                                     </p>
                                 )}
