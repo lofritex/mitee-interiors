@@ -13,7 +13,7 @@ import { testimonials } from "../data/testimonials";
         <div class="swiper-wrapper">
             {
                 testimonials.map((testimonial) => (
-                    <div class="swiper-slide min-w-[80vw] border p-6 sm:min-w-0">
+                    <div class="swiper-slide aspect-4/5 min-w-[80vw] border p-6 sm:min-w-0">
                         <p class="aspect-square font-light">{testimonial.content}</p>
 
                         <p class="my-2 text-center font-medium">- {testimonial.author}</p>
@@ -31,7 +31,17 @@ import { testimonials } from "../data/testimonials";
     new Swiper(".testimonials", {
         modules: [Autoplay, Pagination],
         effect: "fade",
-        slidesPerView: 3,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
         spaceBetween: 10,
         autoplay: {
             delay: 3000,
