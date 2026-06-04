@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 import MainLayout from "../Layouts/MainLayout.astro";
 
-import Special1 from "../assets/Special_1.jpg";
-import Special2 from "../assets/Special_2.jpg";
+import Special1 from "../assets/Special_2.jpg";
+import Special2 from "../assets/projects/greige-house/07.jpg";
 import Special3 from "../assets/Special_3.jpg";
 
 import Myself from "../assets/myself.jpg";
@@ -71,9 +71,21 @@ import { carouselData } from "../data/carousel";
             <h3 class="text-center text-2xl font-light">Every Space, Uniquely Designed.</h3>
 
             <div class="my-10 grid grid-cols-3 place-items-center gap-4">
-                <Image src={Special1} alt="Special 1" />
-                <Image src={Special2} alt="Special 2" />
-                <Image src={Special3} alt="Special 3" />
+                <Image
+                    src={Special1}
+                    alt="Special 1"
+                    class="aspect-4/5 object-cover object-center"
+                />
+                <Image
+                    src={Special2}
+                    alt="Special 2"
+                    class="aspect-4/5 object-cover object-center"
+                />
+                <Image
+                    src={Special3}
+                    alt="Special 3"
+                    class="aspect-4/5 object-cover object-center"
+                />
             </div>
         </div>
         <div class="flex justify-center">
